@@ -56,10 +56,11 @@ bool schedule(
     
     // vector of vectors to indicating the d workers (col)
     //who are scheduled to work on each of the n days (rows)
-    for(unsigned int row = 0; row < avail.size(); row++){ // for loop in set up 
+    //for(unsigned int row = 0; row < avail.size(); row++){ // for loop in set up 
         // populate schedule based on how many workers needed each day
-        sched.push_back(workers_needed);
-    }
+        //sched.push_back(workers_needed);
+    //}
+		sched.resize(avail.size(), workers_needed); 
 
 	return schedule_helper(avail, dailyNeed, maxShifts, sched, 0, 0);
 }
